@@ -6,14 +6,26 @@ use Illuminate\Http\Request;
 
 class PageController extends controller
 {
-    public function about()
-    {
-    return "hello its working";
-}
-public function form(Request $request)
+public function form()
 {
-    $location = $request->input('location','');
-    return view('page.form', ['location' => $location, 'request'  => $request]);
+    $location = '';
+    $mail = '';
+    $key = '';
+    $num = '';
+    $date = '';
+    $amount = '';
+    return view('form', compact('location','mail','key'));
+}
+public function submit(Request $request)
+{
+    $location = $request->input('location');
+    $mail = $request->input('mail');
+    $key = $request->input('key');
+    $num = $request->input('num');
+    $date = $request->input('date');
+    $amount = $request->input('amount');
+    
+    return view('form', compact('location', 'mail', 'key', 'num', 'date', 'amount'));
 }
 }
 ?>
