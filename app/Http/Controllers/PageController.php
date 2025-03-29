@@ -14,7 +14,7 @@ public function form()
     $num = '';
     $date = '';
     $amount = '';
-    return view('form', compact('location','mail','key'));
+    return view('form', compact('location', 'mail', 'key', 'num', 'date', 'amount'));
 }
 public function submit(Request $request)
 {
@@ -25,7 +25,8 @@ public function submit(Request $request)
     $date = $request->input('date');
     $amount = $request->input('amount');
     
-    return view('form', compact('location', 'mail', 'key', 'num', 'date', 'amount'));
+    return view('display', compact('location', 'mail', 'key', 'num', 'date', 'amount'));
+    
 }
 }
 ?>
