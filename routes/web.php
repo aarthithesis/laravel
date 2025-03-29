@@ -7,14 +7,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/form', [PageController::class, 'form'])->name('user');
 
 // Route to handle form submission
-Route::post('/submit', [PageController::class, 'submit']);
+Route::post('/submit', [PageController::class, 'submit'])->name('submit');
 
 Route::get('/{name}', function($name) {
-    return "Welcome $name <a href='" . route('user') . "'>register here</a>";
+    return "<h5>Welcome </h5><h4>$name</h4> <a href='" . route('user') . "'>register here</a>";
 });
 
 
-Route::get('/form', function() {
-    return view('form');
-})->name('user');
+
 ?>
