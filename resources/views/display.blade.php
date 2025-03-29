@@ -10,27 +10,35 @@
     <div class="container mt-5">
         <h5 class="text-center">Submitted Data</h5>
 
-        <!-- Display Data in Table -->
-        <table class="table table-bordered mt-3">
-            <thead class="table-dark">
-                <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ $location }}</td>
-                    <td>{{ $mail }}</td>
-                    <td>{{ $key }}</td>
-                </tr>
-            </tbody>
-        </table>
+      
+        @if(!empty($location) || !empty($mail) || !empty($key) || !empty($num) || !empty($date) || !empty($amount))
+            <table class="table table-bordered mt-3">
+                <thead class="table-success">
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Mobile Number</th>
+                        <th>Date of Donation</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $location }}</td>
+                        <td>{{ $mail }}</td>
+                        <td>{{ $key }}</td>
+                        <td>{{ $num }}</td>
+                        <td>{{ $date }}</td>
+                        <td>{{ $amount }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        @endif
 
-        <!-- Button to Go Back to Form -->
+        
         <div class="text-center">
-            <a href="/form" class="btn btn-primary">Go Back to Form</a>
+            <a href="{{route('user')}}" class="btn btn-primary">Back to Form</a>
         </div>
     </div>
 </body>

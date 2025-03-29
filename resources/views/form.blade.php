@@ -8,37 +8,12 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h5 class="text-center">Registration Form</h5>
+        <h5 class="text-center text-primary">Registration Form</h5>
 
-        <!-- ✅ Display Submitted Data -->
-        @if(!empty($location) || !empty($mail) || !empty($key))
-            <table class="table table-bordered mt-3">
-                <thead class="table-success">
-                    <tr>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Mobile Number</th>
-                        <th>Date of Donation</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{{ $location }}</td>
-                        <td>{{ $mail }}</td>
-                        <td>{{ $key }}</td>
-                        <td>{{ $num }}</td>
-                        <td>{{ $date }}</td>
-                        <td>{{ $amount }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        @endif
+        
 
-
-        <!-- ✅ Form -->
-        <form action="/submit" method="post">
+        
+        <form action="{{route('submit')}}" method="post">
             @csrf
             <div class="mb-3">
                 <label for="username" class="form-label">Name</label>
